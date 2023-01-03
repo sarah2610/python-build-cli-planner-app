@@ -1,6 +1,8 @@
-class RegularReminder():
-    def __iter__(self):
-        raise NotImplementedError("Not implemented")
-
-    def __str__(self):
-        raise NotImplementedError("Method not implemented")
+class PrefixedReminder:
+    def __init__(self,prefix="Hey, dont forget to"):
+        self.prefix=prefix
+        self.text=prefix + '<placeholder_text>'
+    
+class PoliteReminder(PrefixedReminder):
+    def __init__(self,text):
+        super().__init__(prefix="Please remember to ")
